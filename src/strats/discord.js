@@ -47,7 +47,7 @@ passport.use(
     {
       clientID: '1185581609949335592',
       clientSecret: 'CTrevyeH14jdOT5hJsWOCKkN2ufgbjkx',
-      callbackURL: 'http://localhost:3002/api/user/discord/redirect',
+      callbackURL: 'https://todolist-lbt3.onrender.com/api/user/discord/redirect',
       scope:['identify'],
     },
     //verify function

@@ -48,7 +48,7 @@ passport.use(
     {
       clientID: '6856700447738880',
       clientSecret: 'f69072767881ea2eae3c84ca7fdf2ecd',
-      callbackURL: 'http://localhost:3002/api/user/facebook/redirect',
+      callbackURL: 'https://todolist-lbt3.onrender.com/api/user/facebook/redirect',
       profileFields: ['id', 'displayName', 'photos', 'email'],
     },
     //verify function
