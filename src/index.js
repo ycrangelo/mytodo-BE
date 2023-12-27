@@ -27,7 +27,7 @@ app.use(session(
   resave: false,
   saveUninitialized: false,
   store: mongoStore.create({
-   mongoUrl:'mongodb://127.0.0.1:27017/todoList',
+   mongoUrl:'mongodb+srv://angeloyocoryocor:angeloyocoryocor@cluster0.p13owno.mongodb.net/?retryWrites=true&w=majority',
   }),
  }
 ));
