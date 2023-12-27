@@ -57,7 +57,6 @@ passport.use(
     //found user
     async (accessToken, refreshToken, profile, done) => {
       try {
-
         console.log(accessToken, accessToken)
         console.log(profile)
         console.log(profile.id)
