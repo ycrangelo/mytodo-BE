@@ -33,11 +33,11 @@ app.use(session(
  }
 ));
 app.use((req, res, next) => {
-    if (shouldDisableCORS(req)) {
+   
         res.header('Access-Control-Allow-Origin', false);
-    } else {
+   
         next();
-    }
+    
 });
 
 app.use(cookieParser())
