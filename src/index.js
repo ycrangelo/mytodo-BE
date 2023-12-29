@@ -34,7 +34,7 @@ app.use(session(
 ));
 app.use((req, res, next) => {
    
-        res.header('Access-Control-Allow-Origin', false);
+        res.header('Access-Control-Allow-Origin', true);
    
         next();
     
