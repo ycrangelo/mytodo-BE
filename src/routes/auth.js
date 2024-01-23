@@ -55,7 +55,7 @@ router.post('/register', async (req, res) => {
       //then saving it
       await newUser.save()
       //sending a response to the client side
-      res.status(201).send('ok')
+      res.status(201).send(newUser)
     }
   } catch (error) {
     console.log(error)

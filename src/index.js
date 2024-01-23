@@ -25,15 +25,15 @@ app.use(express.urlencoded())
 app.use(cors());
 
 app.use(session(
- {
-  secret: 'asudhgausdhgaushd',
-  resave: false,
-  saveUninitialized: false,
-  store: mongoStore.create({
-   mongoUrl:'mongodb+srv://angeloyocoryocor:angeloyocoryocor@cluster0.p13owno.mongodb.net/?retryWrites=true&w=majority',
-  }),
- }
-));
+   {
+      secret: 'asudhgausdhgaushd',
+      resave: false,
+      saveUninitialized: false,
+      store: mongoStore.create({
+         mongoUrl: 'mongodb+srv://angeloyocoryocor:angeloyocoryocor@cluster0.p13owno.mongodb.net/?retryWrites=true&w=majority',
+      }),
+   }
+))
 
 const corsOptions ={
    origin:'*', 
@@ -44,10 +44,10 @@ const corsOptions ={
 app.use(cors(corsOptions))
 app.use(cookieParser())
 app.use((req, res, next) => {
- console.log(req.method)
- console.log(`${process.env.FACEBOOKCLIENTID}`)
- next()
-});
+   console.log(req.method)
+   console.log(`${process.env.FACEBOOKCLIENTID}`)
+   next()
+})
 
 app.use(passport.initialize())
 app.use(passport.session())
