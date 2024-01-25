@@ -23,7 +23,7 @@ const PORT = 3002;
 app.use(express.json())
 app.use(express.urlencoded())
 const corsOptions = {
-  origin: ['http://localhost:5173','https://mytodo-fe.vercel.app/']
+  origin: ['http://localhost:5173','https://mytodo-fe.vercel.app/'],
   credentials: true,
   optionsSuccessStatus: 200,
 };
