@@ -25,7 +25,6 @@ app.use(express.urlencoded())
 const corsOptions = {
   origin: ['http://localhost:5173','https://mytodo-fe.vercel.app/'],
   credentials: true,
-  optionsSuccessStatus: 200,
 };
 
 app.use(cors(corsOptions));
