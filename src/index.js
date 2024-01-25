@@ -35,21 +35,13 @@ app.use(session(
    }
 ))
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:5173'); // Replace with your actual client origin
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+const corsOptions ={
+   origin:'*', 
+   credentials:true,            //access-control-allow-credentials:true
+   optionSuccessStatus:200,
+}
 
-  // Allow credentials (cookies, etc.)
-  res.header('Access-Control-Allow-Credentials', 'true');
-
-  if (req.method === 'OPTIONS') {
-    // Handle preflight requests
-    res.sendStatus(200);
-  } else {
-    next();
-  }
-});
+app.use(cors(corsOptions))
 
 app.use(cookieParser())
 app.use((req, res, next) => {
