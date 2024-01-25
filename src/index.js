@@ -13,7 +13,6 @@ const passport = require('passport')
 const mongoStore = require('connect-mongo')
 const authUser = require('./routes/auth.js')
 const todo = require('./routes/todoList')
-const { createProxyMiddleware } = require('http-proxy-middleware');
 
 
 
@@ -23,13 +22,15 @@ const PORT = 3002;
 
 app.use(express.json())
 app.use(express.urlencoded())
-const corsOptions = {
-  origin: ['http://localhost:5173','https://mytodo-fe.vercel.app/'],
-  credentials: true,
-};
+app.use(cors());
+const corsOptions ={
+   origin:'*', 
+   credentials:true,            //access-control-allow-credentials:true
+}
 
-app.use(cors(corsOptions));
-app.use('/api', createProxyMiddleware({ target: 'https://tasty-sunbonnet-goat.cyclic.app', changeOrigin: true }));
+app.use(cors(corsOptions))
+
+
 
 app.use(session(
    {
