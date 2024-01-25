@@ -13,6 +13,7 @@ const passport = require('passport')
 const mongoStore = require('connect-mongo')
 const authUser = require('./routes/auth.js')
 const todo = require('./routes/todoList')
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
 
 
@@ -28,6 +29,7 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+app.use('/api', createProxyMiddleware({ target: 'https://tasty-sunbonnet-goat.cyclic.app', changeOrigin: true }));
 
 app.use(session(
    {
