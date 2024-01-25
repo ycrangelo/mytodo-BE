@@ -10,7 +10,7 @@ const todolist = new mongoose.Schema({
   },
   title: {
     type: mongoose.SchemaTypes.String,
-    required: false,
+    required: true,
   },
   todo: {
     type: mongoose.SchemaTypes.String,

@@ -66,6 +66,9 @@ router.post('/register', async (req, res) => {
 router.post('/login', passport.authenticate('local'), (req,res) => {
   console.log('logged in')
   const user = req.user;
+   if (!user) {
+      return res.status(400).send({ error: 'Login failed. Invalid username or password.' });
+    }
   res.status(200).send({ user });
 })
 
