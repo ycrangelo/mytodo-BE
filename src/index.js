@@ -19,16 +19,11 @@ const todo = require('./routes/todoList')
 //port/localHost
 const PORT = 3002;
 
-
+app.use(cors());
 app.use(express.json())
 app.use(express.urlencoded())
-app.use(cors());
-const corsOptions ={
-   origin:'*', 
-   credentials:true,            //access-control-allow-credentials:true
-}
 
-app.use(cors(corsOptions))
+
 
 
 

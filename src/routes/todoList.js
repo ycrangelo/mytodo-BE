@@ -32,7 +32,7 @@ router.post('/post/userTodos', async (req, res) => {
  //then saving it
  await newTodo.save()
  //sending a response to the client side
- res.status(200)
+ res.status(201)
 })
 //params (userID,title,todo)
 
