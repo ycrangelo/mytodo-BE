@@ -5,17 +5,17 @@ const todos = require('../database/schema/todos')
 
 
 //adding a auth in the groceries route
-router.use((req, res, next) => {
- console.log('req,inside the groceries router')
- console.log(req.user)
- //checking if the req.user has a laman
- if (req.user) {
-  next();
- } else {
-  console.log(req.user)
-  res.status(401).send('unothorized')
- }
-})
+// router.use((req, res, next) => {
+//  console.log('req,inside the groceries router')
+//  console.log(req.user)
+//  //checking if the req.user has a laman
+//  if (req.user) {
+//   next();
+//  } else {
+//   console.log(req.user)
+//   res.status(401).send('unothorized')
+//  }
+// })
 
 //get method
 router.get('/get/userTodos/:userID', async (req, res) => {
