@@ -17,9 +17,10 @@ const todo = require('./routes/todoList')
 
 const corsOptions = {
   origin: 'http://localhost:5173',
-  methods: 'POST',
+  methods: ['POST','GET','DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
+app.use(cors(corsOptions));
 
 
 //port/localHost
@@ -53,7 +54,6 @@ app.use((req, res, next) => {
 
 app.use(passport.initialize())
 app.use(passport.session())
-app.use(cors(corsOptions));
 app.use("/api/user", authUser)
 app.use("/api/todos", todo)
 app.listen(PORT,()=>console.log('RUNNING IN PORT 3002'))
