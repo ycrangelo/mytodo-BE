@@ -16,7 +16,7 @@ const todo = require('./routes/todoList')
 
 
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'http://localhost:5173/',
 })); 
 
 app.options('*', cors());
