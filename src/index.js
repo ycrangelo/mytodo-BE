@@ -15,11 +15,15 @@ const authUser = require('./routes/auth.js')
 const todo = require('./routes/todoList')
 
 
-app.use(cors({
-    origin: 'http://localhost:5173/',
-})); 
+const corsOptions = {
+  origin: 'http://localhost:5173',
+  methods: 'POST',
+  allowedHeaders: ['Content-Type', 'Authorization'],
+};
 
-app.options('*', cors());
+app.use(cors(corsOptions));
+
+app.options('*', cors(corsOptions));
 //port/localHost
 const PORT = 3002;
 app.use(express.json())
