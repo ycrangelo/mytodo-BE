@@ -17,7 +17,7 @@ const todo = require('./routes/todoList')
 
 const corsOptions = {
   origin: '*',
-  credentials: true,
+  credentials: false,
   methods: ['PUT', 'GET', 'POST', 'OPTIONS', 'DELETE', 'PATCH'],
 };
 
