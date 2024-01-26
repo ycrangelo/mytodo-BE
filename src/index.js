@@ -21,9 +21,7 @@ const corsOptions = {
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
 
-app.use(cors(corsOptions));
 
-app.options('*', cors(corsOptions));
 //port/localHost
 const PORT = 3002;
 app.use(express.json())
@@ -55,7 +53,7 @@ app.use((req, res, next) => {
 
 app.use(passport.initialize())
 app.use(passport.session())
-
+app.use(cors(corsOptions));
 app.use("/api/user", authUser)
 app.use("/api/todos", todo)
 app.listen(PORT,()=>console.log('RUNNING IN PORT 3002'))
