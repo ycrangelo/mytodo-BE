@@ -27,6 +27,7 @@ router.get('/get/userTodos/:userID', async (req, res) => {
 
 //crate method
 router.post('/post/userTodos', async (req, res) => {
+  console.log('inside')
   res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
@@ -34,7 +35,9 @@ router.post('/post/userTodos', async (req, res) => {
  const { userID, title, todo } = req.body;
  const newTodo = await todos.create({ userID, title, todo },)
  //then saving it
+ console.log('before saving')
  await newTodo.save()
+ console.log('after saving')
  //sending a response to the client side
  res.status(201)
 })
