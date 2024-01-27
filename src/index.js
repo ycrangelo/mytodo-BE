@@ -16,7 +16,7 @@ const todo = require('./routes/todoList')
 
 
 const corsOptions = {
-  origin: '*',
+  origin: 'http://localhost:5173/',
   credentials: true,
   methods: ['PUT', 'GET', 'POST', 'OPTIONS', 'DELETE', 'PATCH'],
 };
