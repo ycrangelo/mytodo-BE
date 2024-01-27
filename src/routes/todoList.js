@@ -54,9 +54,8 @@ router.delete('/delete/userTodos/:_id', async (req, res) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
     res.setHeader('Access-Control-Allow-Credentials', true);
-    const userID = req.params.userID;
-    const title = req.params.title;
-    const result = await todos.deleteOne({ _id: _id });
+    const d_id = req.params._id;
+    const result = await todos.deleteOne({ _id: d_id });
     res.status(201).json({ message: 'ok' }); // Corrected response method
   } catch (err) {
     console.error(err);
