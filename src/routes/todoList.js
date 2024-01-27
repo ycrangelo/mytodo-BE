@@ -38,7 +38,7 @@ router.post('/post/userTodos', async (req, res) => {
     await newTodo.save();
 
     // Sending a response to the client side with data
-    res.status(201).json({ message: 'Todo created successfully', todo: newTodo });
+    res.status(201).json({ message: 'ok', todo: newTodo });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Failed to create todo' });
