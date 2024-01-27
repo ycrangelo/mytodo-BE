@@ -48,11 +48,11 @@ router.post('/post/userTodos', async (req, res) => {
 //params (userID,title,todo)
 
 //delete method
-router.delete('/delete/userTodos/:userID/:title', async (req, res) => {
+router.delete('/delete/userTodos/:_id', async (req, res) => {
  try {
   const userID = req.params.userID;
   const title = req.params.title;
-  const result = await yourModel.deleteOne({ userID: userID, title: title });
+  const result = await yourModel.deleteOne({ _id:_id});
   res.send(200)
  } catch (err) {
   console.error(err);
