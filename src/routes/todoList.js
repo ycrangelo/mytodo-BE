@@ -27,20 +27,24 @@ router.get('/get/userTodos/:userID', async (req, res) => {
 
 //crate method
 router.post('/post/userTodos', async (req, res) => {
-  console.log('inside')
-  res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
+  try {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
     res.setHeader('Access-Control-Allow-Credentials', true);
- const { userID, title, todo } = req.body;
- const newTodo = await todos.create({ userID, title, todo },)
- //then saving it
- console.log('before saving')
- await newTodo.save()
- console.log('after saving')
- //sending a response to the client side
- res.status(201)
-})
+
+    const { userID, title, todo } = req.body;
+    const newTodo = await todos.create({ userID, title, todo });
+    await newTodo.save();
+
+    // Sending a response to the client side with data
+    res.status(201).json({ message: 'Todo created successfully', todo: newTodo });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Failed to create todo' });
+  }
+});
+
 //params (userID,title,todo)
 
 //delete method
