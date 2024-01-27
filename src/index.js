@@ -16,12 +16,12 @@ const todo = require('./routes/todoList')
 
 
 const corsOptions = {
-  origin: 'http://localhost:5173',
+  origin: '*',
   credentials: true,
   methods: ['PUT', 'GET', 'POST', 'OPTIONS', 'DELETE', 'PATCH'],
 };
 
-app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 
 
 //port/localHost
