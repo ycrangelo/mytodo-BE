@@ -49,16 +49,20 @@ router.post('/post/userTodos', async (req, res) => {
 
 //delete method
 router.delete('/delete/userTodos/:_id', async (req, res) => {
- try {
-  const userID = req.params.userID;
-  const title = req.params.title;
-  const result = await todos.deleteOne({_id:_id});
-  res.send(200)
- } catch (err) {
-  console.error(err);
-  res.status(500).json({ error: 'Failed to delete document' });
- }
-})
+  try {
+     res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    const userID = req.params.userID;
+    const title = req.params.title;
+    const result = await todos.deleteOne({ _id: _id });
+    res.status(201).json({ message: 'ok' }); // Corrected response method
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to delete document' });
+  }
+});
 
 
 
