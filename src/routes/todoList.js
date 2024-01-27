@@ -52,7 +52,7 @@ router.delete('/delete/userTodos/:_id', async (req, res) => {
  try {
   const userID = req.params.userID;
   const title = req.params.title;
-  const result = await yourModel.deleteOne({ _id:_id});
+  const result = await todos.deleteOne({_id:_id});
   res.send(200)
  } catch (err) {
   console.error(err);
