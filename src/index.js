@@ -17,11 +17,10 @@ const todo = require('./routes/todoList')
 
 const corsOptions = {
   origin: '*',
-  credentials: true,
   methods: ['PUT', 'GET', 'POST', 'OPTIONS', 'DELETE', 'PATCH'],
 };
 
-app.options('*', cors(corsOptions));
+app.use(cors(corsOptions));
 
 
 //port/localHost
