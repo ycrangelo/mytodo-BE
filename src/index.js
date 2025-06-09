@@ -26,7 +26,7 @@ app.use(cors(corsOptions));
 //port/localHost
 const PORT = 3002;
 app.use(express.json())
-app.use(express.urlencoded())
+app.use(express.urlencoded({ extended: true }))  // Fixed line
 
 app.use(session(
    {
