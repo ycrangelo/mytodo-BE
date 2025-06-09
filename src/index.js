@@ -29,7 +29,8 @@ app.use(express.json())
 app.use(express.urlencoded())
 
 
-
+cjHDVxnILbyOFpdY
+yocorangelo13
 
 
 app.use(session(
@@ -38,7 +39,7 @@ app.use(session(
       resave: false,
       saveUninitialized: false,
       store: mongoStore.create({
-         mongoUrl: 'mongodb+srv://angeloyocoryocor:angeloyocoryocor@cluster0.p13owno.mongodb.net/?retryWrites=true&w=majority',
+         mongoUrl: 'mongodb+srv://yocorangelo13:cjHDVxnILbyOFpdY@cluster0.cxuo6j0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
       }),
    }
 ))
