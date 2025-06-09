@@ -28,11 +28,6 @@ const PORT = 3002;
 app.use(express.json())
 app.use(express.urlencoded())
 
-
-cjHDVxnILbyOFpdY
-yocorangelo13
-
-
 app.use(session(
    {
       secret: 'asudhgausdhgaushd',
